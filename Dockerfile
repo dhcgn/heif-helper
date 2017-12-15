@@ -8,3 +8,8 @@ RUN echo "deb http://ftp.debian.org/debian jessie-backports main" > /etc/apt/sou
          ffmpeg \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/* /etc/apt/sources.list.d/jessie-backports.list
+
+RUN git clone https://github.com/nokiatech/heif.git \
+  && cd heif \
+  && cmake . \ 
+  && make
